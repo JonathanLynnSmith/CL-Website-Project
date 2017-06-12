@@ -1,0 +1,46 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*****Navigation*****/
+.nav-bar{
+    background: #777777;
+    width: 100%;
+    height: 70px;
+}
+
+.nav-bar ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: ;
+}
+
+.nav-bar li{
+    padding: 10px;
+}
+
+
+/*****Main image - top of page*****/
+.main-image img{
+    height: 100vh;
+    width:100%;
+}
+
+
+/*****Content*****/
+.all-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.all-content p{
+    padding: 15px;
+}
+
+.content{
+    flex: 1 50%;
+}
