@@ -2,8 +2,21 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
+  font-family: 
 }
 
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Body
+   ========================================================================== */
+body{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
 
 /* ==========================================================================
    Navigation
@@ -11,17 +24,18 @@
 .nav-bar{
     background: #777777;
     width: 100%;
-    height: 70px;
+    margin-top: -10px;
 }
 
 .nav-bar ul{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: ;
+    flex-direction: column;
 }
 
-.nav-bar li{
+.nav-bar ul li{
     padding: 10px;
+    margin: 0 auto;
+    font-size: 2rem;
 }
 
 
@@ -31,7 +45,6 @@
 .main-image img{
     height: 100%;
     width:100%;
-    padding-bottom: 30px;
 }
 
 
@@ -40,20 +53,63 @@
    ========================================================================== */
 
 .content{
-    padding: 0 15px;
+    padding: 0 35px;
 }
 
 .all-content{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    font-size: 2.25em;
 }
 
-.all-content p{
-    padding: 25px;
+.content h1 {
+    margin: 2.5rem 0 .7rem 0;
 }
 
+.content p{
+    font-size: 2.1rem;
+}
+
+/* ==========================================================================
+   Calendar
+   ========================================================================== */
+.calendar{
+    background: #777777;
+    height:  30rem;
+    width: 55rem;
+    margin: 30px auto 60px auto;
+}
+
+.calendar h1{
+    font-size: 4rem;
+    text-align: center;
+    padding-top:200px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer{
+    background: #4F4E4E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin-top: -10px;
+}
+
+.footer p{
+    color: white;
+    display: inline-block;
+}
+
+.bottom-footer{
+    background: #777777;
+    width: 100%;
+    height: 30px;
+}
 
 /* ==========================================================================
    Media min-width 1000px
@@ -73,4 +129,10 @@
     flex: 1 50%;
 }
 
-} 
+.footer{
+    flex-direction: row;
+}
+
+} /*end min-width 1000px*/
+
+
