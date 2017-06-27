@@ -31,11 +31,11 @@ body{
 .nav-bar ul{
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .nav-bar ul li{
-    padding: 10px;
-    margin: 0 auto;
+    padding: 10px 30px;
     font-size: 2rem;
 }
 
@@ -78,7 +78,7 @@ body{
     background: #777777;
     height:  30rem;
     width: 55rem;
-    margin: 30px auto 60px auto;
+    margin: 30px auto 30px auto;
 }
 
 .calendar h1{
@@ -88,18 +88,51 @@ body{
 }
 
 /* ==========================================================================
+   Board Members
+   ========================================================================== */
+
+.board-profiles{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.board-members {
+    display: flex;
+    flex-basis: 50%;
+    padding: 20px;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+.board-members img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    margin-left: 25%;
+}
+
+.board-members-info{
+    display: inline-block;
+    padding-left:20px;
+    bottom: 20px;
+    font-size: 2rem;
+    text-align: left;
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 .footer{
     background: #4F4E4E;
-    color: white;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 100px;
-    margin-top: -10px;
+    margin-top: 20px;
 }
 
 .bottom-footer{
@@ -114,26 +147,46 @@ body{
 
 @media (min-width: 1000px) {
 
-.main-image{
-    height: 100vh;
-}
+    .main-image{
+        height: 100vh;
+    }
 
-.nav-bar ul{
-    flex-direction: row;
-    padding: 25px;
-}
+    .nav-bar ul{
+        flex-direction: row;
+        padding: 25px;
+        justify-content: center;
+    }
 
-.all-content{
-    flex-direction: row;
-}
+    .nav-bar :not(:last-child){
+        border-right:1px solid white;
+    }
 
-.content{
-    flex: 1 50%;
-}
+    .all-content{
+        flex-direction: row;
+    }
 
-.footer{
-    flex-direction: row;
-}
+    .content{
+        flex: 1 50%;
+    }
+
+    .board-profiles{
+        margin: 0 2rem;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .board-members{
+        flex-basis: 33%;
+        padding-left: 0;
+    }
+
+    .board-members img{
+        margin-left:33%;
+    }
+
+    .footer{
+        flex-direction: row;
+    }
 
 } /*end min-width 1000px*/
 
