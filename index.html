@@ -21,20 +21,22 @@
 
 <!--body-->
 <body>
-<!--Main image-->
-<section>
-    <div class="temp-gadge">
-        <p>Current Temperture</p>
-    </div>
 
+<!--Top of Page-->
+<section>
+    <!--Main image-->
     <div class="main-image">
         <a href=""><img src="http://via.placeholder.com/1880x990"></a>
     </div>
-</section>
-<!--/Main image-->
+    <!--/Main image-->
 
-<!--Nav Bar-->
-<section>
+    <!--Temp Gadge-->
+    <div class="temp-gadge">
+        <p>Current Temperture</p>
+    </div>
+    <!--/Temp Gadge-->
+
+    <!--Nav Bar-->
     <div class="nav-bar">
         <ul> 
             <li>Home</li>
@@ -44,23 +46,26 @@
             <li class="nav-last">What's Nearby?</li>
         </ul>
     </div>
+    <!--/Nav Bar-->
 </section>
-<!--/Nav Bar-->
+<!--/Top of Page-->
 
 <!--content-->
 <Section class="all-content">
+    <h1>Announcements</h1>
+
     <div class="primary content">
-        <h1>Title 1</h1>
+        <h2>Title 1</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac lorem pharetra, semper lorem sed, auctor velit. Morbi tempus nec massa dapibus lacinia. Aenean orci diam, lacinia eget dolor ac, pulvinar dictum nibh. Suspendisse velit dolor, dignissim volutpat facilisis id, rutrum in turpis. Suspendisse potenti. Suspendisse tempor turpis ac urna fermentum sollicitudin a commodo odio. Ut commodo augue sit amet nisi rutrum ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla ultrices, risus quis commodo maximus, elit nunc blandit diam, eu blandit lorem nisl nec eros. Sed interdum maximus urna, nec maximus arcu porttitor nec.</p>
     </div>
 
     <div class="secondary content">
-        <h1>Title 2</h1>
+        <h2>Title 2</h2>
         <p>In sit amet eleifend massa, vitae eleifend lorem. Etiam aliquet auctor enim, ut sagittis ligula vulputate nec. Proin quis neque congue, porttitor lorem sit amet, eleifend sapien. Ut ornare sapien a erat faucibus lobortis. Mauris porttitor, dolor vitae consequat elementum, quam odio convallis erat, a lacinia arcu eros et felis. Ut tortor nibh, tincidunt in dapibus id, tristique in orci. Aenean sagittis pharetra semper. Suspendisse ut dapibus libero. In et augue ipsum. Vivamus sed tristique augue.</p>
     </div>
 
     <div class="third content">
-        <h1>Title 3</h1>
+        <h2>Title 3</h2>
         <p>Etiam nec blandit turpis. Vivamus a massa odio. Donec molestie laoreet leo in bibendum. Sed est eros, vulputate vitae viverra in, interdum vel ante. Mauris bibendum, odio vel consectetur commodo, justo urna ornare orci, in sodales lorem odio non justo. Suspendisse non dui nec nisi porttitor convallis. Nam ac vulputate enim. In nisl quam, malesuada a turpis at, pharetra auctor dui.</p>
     </div>
 </Section>
@@ -69,7 +74,8 @@
 <!--calendar-->
 <section>
     <div class="calendar">
-        <h1>Calendar</h1>
+        <!--<h1>Calendar</h1>-->
+
     </div>
 </section>
 <!--/calendar-->
@@ -123,6 +129,7 @@
 </section>
 <!--/Board Members-->
 
+<!--What's nearby?-->
 <section>
     <div class="whats-nearby">
         <h1>What's Nearby?</h1>
@@ -137,23 +144,25 @@
         <p>Phasellus ipsum ante, pellentesque ac interdum quis, pharetra a elit. Proin porta tristique ligula vel placerat. Curabitur porttitor odio vitae nisl consequat dictum. Phasellus feugiat ullamcorper magna, in suscipit eros varius lobortis. Ut at arcu venenatis, euismod est nec, sollicitudin mauris. Mauris ac commodo nisl. Nam non metus metus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam hendrerit ligula id posuere hendrerit. Quisque mattis arcu tincidunt nulla accumsan accumsan.</p>
     </div>
 </section>
-
+<!--/What's nearby?-->
+ 
+<!--Newsletter-->
+<section class="sign-up-section">
+    <form>
+        <label id="newsletter-label">Newsletter:  </label>
+        <input id="newsletter-form" type="text" placeholder=" JohnDoe@gmail.com">
+        <input id="newsletter-btn" type="submit" value="Sign Up">
+    </form>
+</section>
+<!--/Newsletter-->
 
 <!--/footer--> 
   <footer> 
       <div class="footer">
 
-            <p>&copy 2017 All Rights Reservered</p>
-
-        <form class="sign-up-form">
-            <label>Newsletter:  </label>
-            <input id="newsletter-form" type="text" placeholder=" email">
-            <input id="newsletter-button" type="submit" value="Sign Up">
-        </form>
+        <p>&copy 2017 All Rights Reservered</p>
 
         <a id="forms-docs-btn" href="">Forms & Documents</a>
-            <!-- Trigger/Open The Modal -->
-            <!--<button id="myBtn">Open Modal</button>-->
 
             <!-- The Modal -->
             <div id="modal" class="modal">

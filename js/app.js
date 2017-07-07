@@ -14,16 +14,17 @@ var weatherMethod = function(data) {
 /********************************************************** 
 Applying checkmark after newletter signup
 ***********************************************************/
-var newsletterButton = $("#newsletter-button");
+var newsletterButton = $("#newsletter-btn");
 var newsletterForm = $("#newsletter-form");
+var newsletterLabel = $("#newsletter-label")
 
 newsletterButton.click( function(){
     event.preventDefault();
-    newsletterForm.after('<p>Thank You! &#10004</p>');
     $("form p").addClass("checkmark");
-    newsletterButton.detach();
-    newsletterForm.detach();
-    console.log(newsletterForm.val());
+    newsletterForm.after('<p>Thank You!</p>');
+    newsletterButton.remove();
+    newsletterForm.remove();
+    newsletterLabel.remove();
 });
 
 
