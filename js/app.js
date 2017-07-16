@@ -36,7 +36,7 @@ var modalBtn = $("#forms-docs-btn");
 var modalClose= $(".modal-close")
 
 // When the user clicks the button, open the modal 
-modalBtn.click(function(){
+modalBtn.click(function(event){
     event.preventDefault();
     modal.css("display", "block");
 });

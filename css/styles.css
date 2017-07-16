@@ -37,7 +37,7 @@ body a{
    ========================================================================== */
 .main-image{
     height: 350px;
-    background-image: url("../content/wilchar.jpg");
+    background-image: url('https://image.ibb.co/kjKCkF/wilchar.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 30% 50%;
@@ -227,7 +227,7 @@ Temp Gadge
 #newsletter-form{
     height: 40px;
     padding: 10px;
-    font-size: 1.3rem;
+    font-size: 1rem;
     outline: none;
 }
 
