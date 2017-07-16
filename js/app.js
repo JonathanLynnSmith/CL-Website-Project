@@ -7,7 +7,7 @@ var weatherMethod = function(data) {
     var currentTemp = '<h1> ' + data.current_observation.temp_f + 'F </h1>';
     $('.temp-gadge').append(currentTemp);
 };
-// $.getJSON(weatherAPI, weatherMethod);
+$.getJSON(weatherAPI, weatherMethod);
 
 
 

@@ -14,25 +14,33 @@ a {
     color: white;
     text-decoration: none;
 }
+
+p,h1,h2,h3,h4,h5,h6{
+    color: #00171F;
+}
 /* ==========================================================================
    Body
    ========================================================================== */
 body{
     font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #FEFEFE;
 }
 
 body a{
      text-decoration: none;
-     color: #fff
+     color: #FEFEFE
 }
 
 
 /* ==========================================================================
   Main image at top of page
    ========================================================================== */
-.main-image img{
-    height: 100%;
-    width:100%;
+.main-image{
+    height: 350px;
+    background-image: url("../content/wilchar.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 30% 50%;
     position: relative;
     z-index: 0;
 }
@@ -58,7 +66,7 @@ body a{
 
 .nav-bar a{
     padding: 10px 30px;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
 }
 
@@ -69,8 +77,8 @@ Temp Gadge
 .temp-gadge{
     background: rgba(119,119,119,0.5);
     border-radius: 5px;
-    height: 5rem;
-    width: 5rem;
+    height: 40px;
+    width: 60px;
     z-index: 1;
     position: absolute;
     right: 10px;
@@ -79,14 +87,15 @@ Temp Gadge
 
 .temp-gadge p,
 .temp-gadge h1{
-    color: #fff;
+    color: #FEFEFE;
     width: 100%;
     margin: 0;
     text-align: center;
+    font-size: 1.7em;
 }
 
 .temp-gadge p{
-    font-size: 1rem;
+    font-size: .5em;
 }
 
 
@@ -146,10 +155,10 @@ Temp Gadge
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 3px solid #f1f1f1;
+    border: 3px solid #FED766;
     border-radius: 10px;
-    width: 10rem;
-    height: 13rem;
+    width: 8rem;
+    height: 11rem;
 }
 
 .board-members-wrapper:hover{
@@ -157,13 +166,13 @@ Temp Gadge
     transform: scale(1.1)
 }
 .board-members img{
-    height: 6rem;
-    width: 6rem;
+    height: 5rem;
+    width: 5rem;
     border-radius: 50%;
 }
 
 .board-members-info{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     padding-top: 10px;
 }
 
@@ -173,9 +182,9 @@ Temp Gadge
    What's Nearby
    ========================================================================== */
 .whats-nearby-section h2{
-    background: #777;
+    background: #FED766;
     border-radius: 15px;
-    color: #fff;
+    color: #FEFEFE;
     text-align: center;
     width:30%;
     padding: 15px 10px;
@@ -202,7 +211,7 @@ Temp Gadge
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ccc;
+    background: #FED766;
     height: 100px;
     text-align: center;
     margin-top: 50px;
@@ -210,7 +219,7 @@ Temp Gadge
 
 .sign-up-section P, 
 #newsletter-label{
-    color: #777;
+    color: #605B56;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -223,12 +232,12 @@ Temp Gadge
 }
 
 #newsletter-form:focus{
-    border: 1px solid #777;
+    border: 1px solid #605B56;
 }
 
 #newsletter-btn{
-    color: #fff;
-    background-color:#777;
+    color: #FEFEFE;
+    background-color:#605B56;
     border-radius: 3px;
     text-transform: uppercase;
     font-size: 1rem;
@@ -241,8 +250,8 @@ Temp Gadge
    Footer
    ========================================================================== */
 .footer{
-    background: #4F4E4E;
-    color: #fff;
+    background: #362C28;
+    color: #FEFEFE;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -253,25 +262,26 @@ Temp Gadge
 }
 
 .bottom-footer{
-    background: #777777;
+    background: #605B56;
     width: 100%;
     height: 30px;
 }
 
 footer p{
+    color: #FEFEFE;
     font-size: 1rem;
     display: inline-block;
 }
 
 #forms-docs-btn{
-    border: .5px solid #fff;
+    border: .5px solid #FEFEFE;
     padding: 2px 6px;
     border-radius: 5px;
-    color: #f1f1f1;
+    color: #FEFEFE;
 }
 
 #forms-docs-btn:hover{
-    color: #fff;
+    color: #FED766;
     box-shadow: 1px 1px 10px rgba(119,119,119, 0.8)
 }
 
@@ -290,12 +300,18 @@ footer .checkmark{
     }
     
     .main-image{
-        height: 100vh;
+       height: 100vh; 
+       background-position: 50% 10%;
+    }
+
+    .temp-gadge{
+        height: 70px;
+        width: 80px;
     }
 
     .nav-bar{
         display: initial;
-        background: rgba(119,119,119,0.5);
+        background: rgba(119,119,119,0.6);
         position: absolute;
         bottom: 0px;
         z-index: 2;
@@ -308,7 +324,7 @@ footer .checkmark{
     }
 
     .nav-bar :not(:last-child){
-        border-right:1px solid white;
+        border-right:1px solid #FEFEFE;
     }
 
     .all-content{
@@ -321,6 +337,20 @@ footer .checkmark{
 
     .board-members{
         flex-basis: 33%;
+    }
+
+    .board-members-wrapper{
+        height: 13rem;
+        width:10rem;
+    }
+
+    .board-members img{
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .board-members-info{
+        font-size: 1.8rem;
     }
 }
 
