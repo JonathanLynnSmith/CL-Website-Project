@@ -18,7 +18,7 @@ var newsletterButton = $("#newsletter-btn");
 var newsletterForm = $("#newsletter-form");
 var newsletterWrapper = $(".sign-up-wrapper")
 
-newsletterButton.click( function(){
+newsletterButton.click( function(event){
     event.preventDefault();
     $("form p").addClass("checkmark");
     newsletterForm.after('<p>Thank You!</p>');
