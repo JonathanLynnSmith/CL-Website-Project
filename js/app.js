@@ -16,7 +16,7 @@ Applying checkmark after newletter signup
 ***********************************************************/
 var newsletterButton = $("#newsletter-btn");
 var newsletterForm = $("#newsletter-form");
-var newsletterLabel = $("#newsletter-label")
+var newsletterWrapper = $(".sign-up-wrapper")
 
 newsletterButton.click( function(){
     event.preventDefault();
@@ -24,7 +24,7 @@ newsletterButton.click( function(){
     newsletterForm.after('<p>Thank You!</p>');
     newsletterButton.remove();
     newsletterForm.remove();
-    newsletterLabel.remove();
+    newsletterWrapper.removeClass();
 });
 
 
