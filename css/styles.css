@@ -38,7 +38,7 @@ body a{
 .main-image{
     height: 350px;
     background-image: url('https://image.ibb.co/kjKCkF/wilchar.jpg');
-    background-size: 120%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: relative;
@@ -148,6 +148,7 @@ Temp Gadge
 
 .board-members {
     display: flex;
+    visibility: hidden;
     flex-basis: 50%;
     margin: 20px 0;
     justify-content: center;
@@ -277,6 +278,7 @@ Temp Gadge
 
 #newsletter-btn:active{
     box-shadow: inset 0px 1px 10px #FED766;
+    color: rgba(90,90,90, 0.8);
 }
 
 #newsletter-btn:focus,
@@ -390,6 +392,29 @@ footer .checkmark{
     .board-members-info{
         font-size: 1.8rem;
     }
+
+    .whats-nearby-info{
+        flex-direction: row ;
+        flex-wrap: wrap;
+    }
+    
+    .first-place,
+    .second-place,
+    .third-place{
+        padding: 30px;
+    }
+
+     .first-place,
+    .second-place{
+        flex-basis:50% ;
+        order: 2;
+    }
+
+    .third-place{
+        flex-basis:100%;
+        order: 1;
+    }
+
 
     .sign-up-wrapper{
         width: 60%;

@@ -7,7 +7,7 @@ var weatherMethod = function(data) {
     var currentTemp = '<h1> ' + data.current_observation.temp_f + 'F </h1>';
     $('.temp-gadge').append(currentTemp);
 };
-$.getJSON(weatherAPI, weatherMethod);
+// $.getJSON(weatherAPI, weatherMethod);
 
 
 
@@ -52,3 +52,32 @@ window.onclick = function(event) {
         modal.css("display", "none")
     }
 };
+
+/********************************************************** 
+Board Members scroll animation activator
+***********************************************************/
+
+var $boardMembers = $('.board-members')
+var $win = $(window);
+
+$win.on('scroll', function () {
+    var top = $win.scrollTop();
+    console.log(top);
+    if (top > 800){
+        $boardMembers.css('visibility', 'visible').addClass('animated fadeInDown')
+    }
+}); 
+
+/********************************************************** 
+Href Scroll Animation
+***********************************************************/
+$('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
+
+    var target =this.hash
+    var $target = $(target);
+
+    $('html, body').animate({
+        'scrollTop': $target.offset().top
+    }, 500, 'swing');
+});
