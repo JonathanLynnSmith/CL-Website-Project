@@ -60,18 +60,27 @@ Board Members scroll animation activator
 var $boardMembers = $('.board-members')
 var $win = $(window);
 
+
+// $win.resize(function(){
+//     var $width = $win.width();
+//     console.log($width);
+// });
+
 $win.on('scroll', function () {
     var top = $win.scrollTop();
-    console.log(top);
-    if (top > 800){
+    var $width = $win.width();
+    if (top > 800 && $width > 1000){
         $boardMembers.css('visibility', 'visible').addClass('animated fadeInDown')
     }
+      if(top < 700 && $width < 1000)  {
+            $boardMembers.css('visibility', 'visible').addClass('animated fadeInDown')
+        }
 }); 
 
 /********************************************************** 
 Href Scroll Animation
 ***********************************************************/
-$('a[href^="#"]').on('click', function (e) {
+$('a[href^="#"]').on('click','resize', function (e) {
     e.preventDefault();
 
     var target =this.hash
