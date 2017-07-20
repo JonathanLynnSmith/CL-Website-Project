@@ -56,8 +56,6 @@ window.onclick = function(event) {
 /********************************************************** 
 Board Members scroll animation activator
 ***********************************************************/
-
-
 var $win = $(window);
 
 // WIDTH CHECKER
@@ -67,10 +65,10 @@ var $win = $(window);
 // });
 
 // Height CHECKER
-$win.on('scroll', function () {
-var top = $win.scrollTop();
-    console.log(top);
-});
+// $win.on('scroll', function () {
+// var top = $win.scrollTop();
+//     console.log(top);
+// });
 
 $win.on('scroll', function () {
     var top = $win.scrollTop();
@@ -102,6 +100,7 @@ $win.on('scroll', function (){
         $topBtn.removeClass('fadeIn').addClass('fadeOut');
     }
 });
+
 /********************************************************** 
 Href Scroll Animation
 ***********************************************************/

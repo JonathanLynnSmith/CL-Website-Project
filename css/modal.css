@@ -46,7 +46,7 @@
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #FFF5B2;
+    background-color: #FFCE4C;
     color: #FEFEFE;
 }
 
@@ -68,12 +68,12 @@
 }
 
 .modal-body a:hover{
-    background-color: #FFF5B2; 
+    background-color: #FFCE4C; 
 }
 
 .modal-footer {
     padding: 10px 16px;
-    background-color: #FFF5B2;
+    background-color: #FFCE4C;
     color: #FEFEFE;
 }
 
