@@ -7,7 +7,7 @@ var weatherMethod = function(data) {
     var currentTemp = '<h1> ' + data.current_observation.temp_f + 'F </h1>';
     $('.temp-gadge').append(currentTemp);
 };
-// $.getJSON(weatherAPI, weatherMethod);
+$.getJSON(weatherAPI, weatherMethod);
 
 
 
@@ -57,36 +57,62 @@ window.onclick = function(event) {
 Board Members scroll animation activator
 ***********************************************************/
 
-var $boardMembers = $('.board-members')
+
 var $win = $(window);
 
-
+// WIDTH CHECKER
 // $win.resize(function(){
 //     var $width = $win.width();
 //     console.log($width);
 // });
 
+// Height CHECKER
+$win.on('scroll', function () {
+var top = $win.scrollTop();
+    console.log(top);
+});
+
 $win.on('scroll', function () {
     var top = $win.scrollTop();
     var $width = $win.width();
-    if (top > 800 && $width > 1000){
-        $boardMembers.css('visibility', 'visible').addClass('animated fadeInDown')
+    var $boardMembers = $('.board-members')
+    if ($width < 400 && top > 900  ){
+        $boardMembers.css('visibility', 'visible').addClass('animated fadeInDown');
     }
-      if(top < 700 && $width < 1000)  {
-            $boardMembers.css('visibility', 'visible').addClass('animated fadeInDown')
-        }
+    else if( $width > 400 && $width < 800 && top > 600)  {
+            $boardMembers.css('visibility', 'visible').addClass('animated fadeInDown');
+        } 
+        else if($width > 800 && $width > 1000 && top > 1400)  {
+            $boardMembers.css('visibility', 'visible').addClass('animated fadeInDown');
+        } 
+            else if (top < 500 ){
+                $boardMembers.css('visibility', 'hidden').removeClass('animated fadeInDown');
+            }
 }); 
 
 /********************************************************** 
+Back to top selector
+***********************************************************/
+$win.on('scroll', function (){
+    var top = $win.scrollTop();
+    var $topBtn = $('.top-btn');
+    if (top > 500){
+        $topBtn.css('display', 'initial').removeClass('fadeOut').addClass('animated fadeIn')
+    } else if (top < 500) {
+        $topBtn.removeClass('fadeIn').addClass('fadeOut');
+    }
+});
+/********************************************************** 
 Href Scroll Animation
 ***********************************************************/
-$('a[href^="#"]').on('click','resize', function (e) {
+$('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
 
-    var target =this.hash
+    var target =this.hash;
     var $target = $(target);
 
     $('html, body').animate({
         'scrollTop': $target.offset().top
     }, 500, 'swing');
 });
+
