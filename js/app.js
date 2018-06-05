@@ -58,18 +58,6 @@ Board Members scroll animation activator
 ***********************************************************/
 var $win = $(window);
 
-// WIDTH CHECKER
-// $win.resize(function(){
-//     var $width = $win.width();
-//     console.log($width);
-// });
-
-// Height CHECKER
-// $win.on('scroll', function () {
-// var top = $win.scrollTop();
-//     console.log(top);
-// });
-
 $win.on('scroll', function () {
     var top = $win.scrollTop();
     var $width = $win.width();
@@ -113,5 +101,9 @@ $('a[href^="#"]').on('click', function (e) {
     $('html, body').animate({
         'scrollTop': $target.offset().top
     }, 500, 'swing');
+});
+
+$(document).ready( function(){
+    $('#calendar').fullCalendar({});
 });
 
