@@ -1,0 +1,518 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  }
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+p,h1,h2,h3,h4,h5,h6{
+    color: #00171F;
+}
+/* ==========================================================================
+   Body
+   ========================================================================== */
+body{
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #FEFEFE;
+}
+
+body a{
+     text-decoration: none;
+     color: #FEFEFE
+}
+
+
+/* ==========================================================================
+  Main image at top of page
+   ========================================================================== */
+.main-image{
+    height: 350px;
+    background-image: url('https://image.ibb.co/kjKCkF/wilchar.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+    z-index: 0;
+    box-shadow: 0px 2px 10px #000;
+}
+
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+.nav-bar{
+    display: none;
+    background: #777777;
+    min-height: 100px;
+    width: 100%;
+    margin-top: -5px;
+    z-index: 0;
+}
+
+.nav-bar ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-bar a{
+    padding: 10px 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px #000;
+}
+
+
+/* ==========================================================================
+Temp Gadge
+   ========================================================================== */
+.temp-gadge{
+    background: rgba(119,119,119,0.5);
+    box-shadow: 0px 2px 10px #000;
+    padding: 2px;
+    border-radius: 5px;
+    height: 40px;
+    width: 60px;
+    z-index: 1;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.temp-gadge p,
+.temp-gadge h1{
+    color: #FEFEFE;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.temp-gadge p{
+    font-size: .5em;
+}
+
+/* ==========================================================================
+Back to top selector
+   ========================================================================== */
+.top-btn{
+    display: none;
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    background:rgba(119,119,119,0.8);
+    box-shadow: 0px 2px 10px #000;
+    border-radius: 10px;
+    bottom: 10px;
+    right: 10px;
+    padding: 14px;
+    text-align: center;
+    z-index: 999;
+    fill: #fff;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.content{
+    padding: 0 5%;
+}
+
+.all-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.all-content h1 {
+    flex-basis: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.all-content h2{
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+.content p{
+    text-align: center;
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+ .about{
+     margin:30px;
+     padding: 40px 0 50px;
+ }
+
+ .about img{
+     height: auto;
+     width: 90%
+ }
+
+
+/* ==========================================================================
+   Board Members
+   ========================================================================== */
+
+.board-members-section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0 80px;
+    justify-content: space-between;
+}
+
+.board-members {
+    display: flex;
+    visibility: hidden;
+    flex-basis: 50%;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.board-members-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 3px solid #FFB900;
+    border-radius: 10px;
+    width: 8rem;
+    height: 11rem;
+}
+/* 
+.board-members-wrapper:hover{
+    box-shadow: 1px 5px 10px rgba(119,119,119, 0.8);
+    transform: scale(1.1)
+} */
+.board-members img{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.board-members-info{
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+
+/* ==========================================================================
+   Events
+   ========================================================================== */
+.event-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin: 5% 10%;
+    border: 5px solid #FFB900;
+    border-width: 5px 0px;
+    border-radius: 5px;
+    background-color: rgba(236, 232, 212, 0.4);
+    
+}
+
+.event-header{
+    display: flex;
+    justify-content: center;
+}
+
+.event{
+    padding: 0 0 30px;
+}
+
+/* ==========================================================================
+   What's Nearby
+   ========================================================================== */
+.whats-nearby-section h2{
+    background: #FFB900;
+    border-radius: 15px;
+    color: #FEFEFE;
+    text-align: center;
+    width:50%;
+    max-width:400px;
+    padding: 15px 10px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.whats-nearby-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;;
+    padding: 0 5%;
+}
+
+.whats-nearby-section h3{
+    padding:20px 0 10px;
+}
+
+/* ==========================================================================
+   Newsletter
+   ========================================================================== */
+.sign-up-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #FFB900;
+    height: 100px;
+    
+}
+
+.sign-up-wrapper{
+    width: 80%;
+    max-width: 800px;
+    border: 4px solid #FFCE4C;
+    border-radius: 10px;
+}
+
+.sign-up-section P, 
+#newsletter-label{
+    color: #605B56;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#newsletter-label{
+    margin-top: 100px;
+}
+
+#newsletter-form{
+    flex-direction: column;
+    height: 40px;
+    width: 85%;
+    float: left;
+    padding: 10px;
+    border: none;
+    outline:none;
+    font-size: 1rem;
+    border-radius: 5px 0 0 5px;
+}
+
+#newsletter-form:focus{
+    border: 2px solid #FFB900;
+}
+
+#newsletter-btn{
+    color: #362C28; 
+    background-color:#FFCE4C;
+    flex-wrap: nowrap;
+    border: none;
+    float: right;
+    font-size: 2rem;
+    height: 40px;
+    width:15%;
+    border-radius: 0 5px 5px 0;
+    margin-left: -5px;
+}
+
+#newsletter-btn:hover{
+    box-shadow: 0px 2px 10px #FFB900;
+}
+
+#newsletter-btn:active{
+    box-shadow: inset 0px 1px 10px #FFB900;
+    color: rgba(90,90,90, 0.8);
+}
+
+#newsletter-btn:focus,
+#newsletter-btn:active{
+    outline: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer{
+    background: #362C28;
+    color: #FEFEFE;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin-top: 40px;
+}
+
+.bottom-footer{
+    background: #605B56;
+    width: 100%;
+    height: 30px;
+}
+
+footer p{
+    color: #FEFEFE;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+#forms-docs-btn{
+    border: .5px solid #FEFEFE;
+    padding: 2px 6px;
+    border-radius: 5px;
+    color: #FEFEFE;
+}
+
+#forms-docs-btn:hover{
+    color: #FFB900;
+    box-shadow: 1px 1px 10px rgba(119,119,119, 0.8)
+}
+
+footer .checkmark{
+    padding-left: 5px;
+}
+
+
+/* ==========================================================================
+   Editable
+   ========================================================================== */
+.revise:hover{
+    background: blue;
+}
+
+
+/* ==========================================================================
+   Media min-width 600px
+   ========================================================================== */
+@media (min-width: 600px) {
+    .about{
+        width: 80%;
+        margin: 60px auto;
+    }
+
+    .about p{
+
+    }
+
+    .about img{
+        float: left;
+        padding: 0 20px 20px 0;
+        width: 600px;
+        height: 400px;
+    }
+
+}
+
+/* ==========================================================================
+   Media min-width 1000px
+   ========================================================================== */
+@media (min-width: 1000px) {
+
+    body{
+        font-size: 25px;
+    }
+    
+    .main-image{
+       height: 100vh; 
+       background-position: 50% 10%;
+    }
+
+    .temp-gadge{
+        height: 70px;
+        width: 80px;
+    }
+
+    .nav-bar{
+        display: initial;
+        background: rgba(119,119,119,0.6);
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .nav-bar ul{
+        flex-direction: row;
+        padding: 25px;
+        justify-content: center;
+    }
+
+    .nav-bar :not(:last-child){
+        border-right:1px solid #FEFEFE;
+    }
+
+    .all-content{
+        flex-direction: row;
+    }
+
+    .content{
+        flex: 1 50%;
+    }
+
+    .about{
+        margin-bottom: 150px;
+    }
+
+    .board-members{
+        flex-basis: 33%;
+    }
+
+    .board-members-wrapper{
+        height: 13rem;
+        width:10rem;
+    }
+
+    .board-members img{
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .board-members-info{
+        font-size: 1.8rem;
+    }
+
+    .whats-nearby-info{
+        flex-direction: row ;
+        flex-wrap: wrap;
+    }
+    
+    .first-place,
+    .second-place,
+    .third-place{
+        padding: 30px;
+    }
+
+     .first-place,
+    .second-place{
+        flex-basis:50% ;
+        order: 2;
+    }
+
+    .third-place{
+        flex-basis:100%;
+        order: 1;
+    }
+
+
+    .sign-up-wrapper{
+        width: 60%;
+    }
+
+    .footer{
+        flex-direction: row;
+    }    
+
+} /*end min-width 1000px*/

@@ -1,0 +1,22 @@
+{
+  "name": "wilchar-estates",
+  "version": "1.0.0",
+  "description": "My Project was built for a Home Owners Association. This will be used to inform home buyers interested in this area. This will also be used for the current community so they can also stayed informed on upcoming events or new policies.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanLynnSmith/Wilchar-Estates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanLynnSmith/Wilchar-Estates/issues"
+  },
+  "homepage": "https://github.com/JonathanLynnSmith/Wilchar-Estates#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
