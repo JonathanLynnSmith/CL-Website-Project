@@ -1,6 +1,11 @@
 #modal-revise{
+    display: noney;
     justify-content: center;
     align-items: center;
+}
+
+#modal-header{
+    box-shadow: 0px 2px 10px #000; 
 }
 
 #modal-input{
@@ -8,11 +13,24 @@
     width: 100%;
     border-radius: 15px;
     margin: 10px;
+    text-align: left;
+    padding:1%;
+    box-shadow: 0px 2px 10px #000; 
 }
 
 #modal-form{
-    height: 50%;
     width: 80%;
+}
+
+.modal-btn{
+    background: lightgrey; 
+    color:white; 
+    width:7rem;
+    height:3rem;
+    border-radius: 10px; 
+    border:none; 
+    box-shadow: 0px 2px 10px #000; 
+    margin:5px
 }
 
 

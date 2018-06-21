@@ -5,20 +5,29 @@ let reviseableAreas = [
     '.event'
 ]
 
-$("#newsletter-btn").click( function(event){
-    event.preventDefault();
-    reviseableAreas.forEach( function(x){
-        $(x).addClass("revise");
-        console.log(x);
-    })       
-});
-
 let revise = $(".revise");
 let modalRevise = $("#modal-revise");
 
+function checkUrlForAdmin(){
+    if(window.location.href.indexOf("admin") > -1){
+         reviseableAreas.forEach(function(x){
+             $(x).addClass('revise');
+         })
+     }
+ };
+
 $(document).on('click','.revise', function(event){
     event.preventDefault();
-    modalRevise.css("display", "flex")
+    modalRevise.css("display", "flex");
+    let header = $(this).children('h2').text();
+    let text = $(this).children('p').text();
+    $('#modal-header').text(header);
+    $('#modal-input').text(text);
+})
+
+$('#admin-cancel').click(function(event){
+    event.preventDefault();
+    modalRevise.css("display","none");
 })
 
 /********************************************************** 
@@ -35,10 +44,10 @@ function getFiles(){
 };
 
 function renderFiles(data){
-    const listItems = data.content.map(line => `        
+    const listItems = data.map(line => `        
         <div class="event"> 
             <h2>${line.header}</h2>
-            <p>${line.paragraph}</p>
+            <p class="para">${line.paragraph}</p>
         </div>`);
 
     const html = listItems.join('');
@@ -49,7 +58,10 @@ $(document).ready( function(){
     getFiles()
     .then(files => renderFiles(files))
     .then(html => $('#events').html(html))
+    .then(check => checkUrlForAdmin())
 });
+
+
 
 /********************************************************** 
 Weather Application at top of page

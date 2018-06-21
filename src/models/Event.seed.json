@@ -1,0 +1,14 @@
+[
+    {
+        "header": "Event 1", 
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac lorem pharetra, semper lorem sed, auctor velit. Morbi tempus nec massa dapibus lacinia. Aenean orci diam, lacinia eget dolor ac, pulvinar dictum nibh. Suspendisse velit dolor, dignissim volutpat facilisis id."
+    },
+    {
+        "header": "Event 2",
+        "paragraph": "Porttitor lorem sit amet, eleifend sapien. Ut ornare sapien a erat faucibus lobortis. Mauris porttitor, dolor vitae consequat elementum, quam odio convallis erat, a lacinia arcu eros et felis. Ut tortor nibh, tincidunt in dapibus id, tristique in orci."
+    },
+    {
+        "header": "Event 3",
+        "paragraph": "Interdum vel ante. Mauris bibendum, odio vel consectetur commodo, justo urna ornare orci, in sodales lorem odio non justo. Suspendisse non dui nec nisi porttitor convallis. Nam ac vulputate enim. In nisl quam, malesuada a turpis at, pharetra auctor dui."
+    }
+]
