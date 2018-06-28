@@ -164,11 +164,11 @@
 <!--Modal Revise-->
 <div class="modal" id="modal-revise">
     <form id="modal-form">
-        <textarea id="modal-header" style="border-radius: 10px; text-align: center;padding-top: 20px; margin-left:10px;"></textarea>
-        <textarea id="modal-input" cols="30" rows="10"></textarea>
+        <textarea autocomplete="off" id="modal-header"></textarea>
+        <textarea autocomplete="off" id="modal-input" cols="30" rows="10"></textarea>
         <span style="display:flex; justify-content: flex-end;">
-            <button class="modal-btn" id="admin-submit" style="background: green" type="submit">Save</button>
-            <button class="modal-btn" id="admin-cancel" style="background:lightcoral">Cancel</button>
+            <button type="button" onclick="submitAdminForm()" class="modal-btn" id="admin-submit" style="background: #FFB900" type="submit">Save</button>
+            <button type="button" onclick="cancelAdminForm()" class="modal-btn" id="admin-cancel" style="background:lightcoral">Cancel</button>
         </span>
     </form>
 </div>

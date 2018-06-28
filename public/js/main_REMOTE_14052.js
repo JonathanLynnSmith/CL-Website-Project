@@ -5,58 +5,22 @@ let reviseableAreas = [
     '.event'
 ]
 
+function detectIfHrefContainsAdmin(){
+    if(window.location.href.indexOf("admin") > -1) {
+        reviseableAreas.forEach( function(x){
+            $(x).addClass("revise");
+            console.log(x);
+        });
+    }
+};
+           
 let revise = $(".revise");
 let modalRevise = $("#modal-revise");
 
-function checkUrlForAdmin(){
-    if(window.location.href.indexOf("admin") > -1){
-         reviseableAreas.forEach(function(x){
-             $(x).addClass('revise');
-         })
-     }
- };
-
 $(document).on('click','.revise', function(event){
     event.preventDefault();
-    modalRevise.css("display", "flex");
-    let header = $(this).children('h2').text();
-    let text = $(this).children('p').text();
-    $('#modal-header').text(header);
-    $('#modal-input').text(text);
+    modalRevise.css("display", "flex")
 })
-
-function submitAdminForm() {
-    modalRevise.css("display","none");
-
-    const formData = {
-        header: $('#modal-header').val(),
-        paragraph: $('#modal-input').val(),
-    };
-
-    fetch('/api/file', {
-        method: 'post',
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(response => response.json())
-        .then(file => {
-          console.log("we have posted the data", file);
-        })
-        .catch(err => {
-          console.error("A terrible thing has happened", err);
-        }) 
- 
-    console.log("Your file data", formData);
-  }
-
-  function cancelAdminForm() {
-    console.log("You clicked 'cancel'. Congratulations.");
-    modalRevise.css("display","none");
-    $('#modal-header').text('');
-    $('#modal-input').text('');
-  }
 
 /********************************************************** 
 Events
@@ -66,15 +30,16 @@ function getFiles(){
     return fetch('/api/events')
     .then( response => response.json())
     .then( files => {
+        console.log(files);
         return files;
     }) 
 };
 
 function renderFiles(data){
-    const listItems = data.map(line => `        
+    const listItems = data.content.map(line => `        
         <div class="event"> 
             <h2>${line.header}</h2>
-            <p class="para">${line.paragraph}</p>
+            <p>${line.paragraph}</p>
         </div>`);
 
     const html = listItems.join('');
@@ -85,10 +50,8 @@ $(document).ready( function(){
     getFiles()
     .then(files => renderFiles(files))
     .then(html => $('#events').html(html))
-    .then(check => checkUrlForAdmin())
+    .then(x => detectIfHrefContainsAdmin());
 });
-
-
 
 /********************************************************** 
 Weather Application at top of page

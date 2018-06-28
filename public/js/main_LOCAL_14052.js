@@ -25,38 +25,10 @@ $(document).on('click','.revise', function(event){
     $('#modal-input').text(text);
 })
 
-function submitAdminForm() {
+$('#admin-cancel').click(function(event){
+    event.preventDefault();
     modalRevise.css("display","none");
-
-    const formData = {
-        header: $('#modal-header').val(),
-        paragraph: $('#modal-input').val(),
-    };
-
-    fetch('/api/file', {
-        method: 'post',
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(response => response.json())
-        .then(file => {
-          console.log("we have posted the data", file);
-        })
-        .catch(err => {
-          console.error("A terrible thing has happened", err);
-        }) 
- 
-    console.log("Your file data", formData);
-  }
-
-  function cancelAdminForm() {
-    console.log("You clicked 'cancel'. Congratulations.");
-    modalRevise.css("display","none");
-    $('#modal-header').text('');
-    $('#modal-input').text('');
-  }
+})
 
 /********************************************************** 
 Events
@@ -66,6 +38,7 @@ function getFiles(){
     return fetch('/api/events')
     .then( response => response.json())
     .then( files => {
+        console.log(files);
         return files;
     }) 
 };
