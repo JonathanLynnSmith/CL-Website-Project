@@ -164,11 +164,13 @@
 <!--Modal Revise-->
 <div class="modal" id="modal-revise">
     <form id="modal-form">
+        <input type="hidden" autocomplete="off" id="modal-event-id"></input>
         <textarea autocomplete="off" id="modal-header"></textarea>
         <textarea autocomplete="off" id="modal-input" cols="30" rows="10"></textarea>
         <span style="display:flex; justify-content: flex-end;">
             <button type="button" onclick="submitAdminForm()" class="modal-btn" id="admin-submit" style="background: #FFB900" type="submit">Save</button>
             <button type="button" onclick="cancelAdminForm()" class="modal-btn" id="admin-cancel" style="background:lightcoral">Cancel</button>
+            <button type="button" class="modal-btn" onClick="deleteAdminForm()" style="background:red">Delete</button>
         </span>
     </form>
 </div>
@@ -251,7 +253,8 @@
 
 <script src="js/moment.js" type="text/javascript"></script>
 <script src="js/fullcalendar.js" type="text/javascript"></script>
-<script src="js/main.js" type="text/javascript"></script>
+<script src="js/admin.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
 <!--/javascript-->
 
 </body>

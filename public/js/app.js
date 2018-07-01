@@ -1,58 +1,7 @@
 /********************************************************** 
-Admin
-***********************************************************/
-let reviseableAreas = [
-    '.event'
-]
-
-let revise = $(".revise");
-let modalRevise = $("#modal-revise");
-
-function checkUrlForAdmin(){
-    if(window.location.href.indexOf("admin") > -1){
-         reviseableAreas.forEach(function(x){
-             $(x).addClass('revise');
-         })
-     }
- };
-
-$(document).on('click','.revise', function(event){
-    event.preventDefault();
-    modalRevise.css("display", "flex");
-    let header = $(this).children('h2').text();
-    let text = $(this).children('p').text();
-    $('#modal-header').text(header);
-    $('#modal-input').text(text);
-})
-
-$('#admin-cancel').click(function(event){
-    event.preventDefault();
-    modalRevise.css("display","none");
-})
-
-/********************************************************** 
 Events
 ***********************************************************/
-//Get data
-function getFiles(){
-    return fetch('/api/events')
-    .then( response => response.json())
-    .then( files => {
-        console.log(files);
-        return files;
-    }) 
-};
 
-function renderFiles(data){
-    const listItems = data.map(line => `        
-        <div class="event"> 
-            <h2>${line.header}</h2>
-            <p class="para">${line.paragraph}</p>
-        </div>`);
-
-    const html = listItems.join('');
-    return html;
-};
 
 $(document).ready( function(){
     getFiles()
@@ -61,10 +10,29 @@ $(document).ready( function(){
     .then(check => checkUrlForAdmin())
 });
 
+//Get data
+function getFiles(){
+    return fetch('/api/events')
+    .then( response => response.json())
+    .then( files => {
+        window.eventList = files;
+        return files;
+    }) 
+};
 
+function renderFiles(data){
+    const listItems = data.map(line => `        
+        <div class="event"> 
+            <h2 eventId="${line._id}">${line.header}</h2>
+            <p>${line.paragraph}</p>
+        </div>`);
+
+    const html = listItems.join('');
+    return html;
+};
 
 /********************************************************** 
-Weather Application at top of page
+Weather Application at top of page *DISABLED*
 ***********************************************************/
 // var weatherAPI = "https://api.wunderground.com/api/2e843102da35bfb9/conditions/q/40047.json";
 // var weatherMethod = function(data) {
