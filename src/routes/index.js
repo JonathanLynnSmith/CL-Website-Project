@@ -4,9 +4,7 @@ const mongoose =require('mongoose');
 const path = require('path');
 
 
-
-
-router.delete('/events/delete/:eventId', function(req,res,next){
+router.delete('/events/:eventId', function(req,res,next){
   const Event = mongoose.model('Event');
   const eventId = req.params.eventId;
   // Event.findById(eventId, function(err, event){
@@ -23,8 +21,6 @@ router.delete('/events/delete/:eventId', function(req,res,next){
   })
 
 });
-
-
 
 router.put('/events/:eventId', function(req, res, next){
       const Event = mongoose.model('Event');

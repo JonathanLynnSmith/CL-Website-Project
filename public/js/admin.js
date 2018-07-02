@@ -4,29 +4,8 @@ Admin
 let reviseableAreas = [
     '.event'
 ]
-
 let revise = $(".revise");
 let modalRevise = $("#modal-revise");
-
-
-$(document).on('click','.revise', function(event){
-    event.preventDefault();
-    let eventId = $(this).children('h2').attr('eventId');
-
-    revealModal();
-    const myEvent =  window.eventList.find(myEvent => myEvent._id === eventId);
-    setForm(myEvent);
-})
-
-function revealModal(){
-    modalRevise.css("display", "flex");
-    // let eventID = $(div).children('h2').attr('eventId');
-    // let header = $(div).children('h2').text();
-    // let text = $(div).children('p').text();
-    // $('#modal-event-id').text(eventID);
-    // $('#modal-header').text(header);
-    // $('#modal-input').text(text);
-}
 
 /*********Check URL For Admin*************/
 function checkUrlForAdmin(){
@@ -39,14 +18,22 @@ function checkUrlForAdmin(){
  };
  /***************************************/
 
-function createNewEventBtn(){
-    let newEventHtml = $(`<button class="newEvent">Add New Event</button>`);
-    newEventHtml.click(function(){
-        revealModal();
-        setForm();
-    });
-    return newEventHtml;
-};
+
+$(document).on('click','.revise', function(event){
+    event.preventDefault();
+    let eventId = $(this).children('h2').attr('eventId');
+    const myEvent =  window.eventList.find(myEvent => myEvent._id === eventId);
+    setForm(myEvent);
+    revealModal();
+})
+
+function revealModal(){
+    modalRevise.css("display", "flex");
+}
+
+function hideModal(){
+    modalRevise.css("display","none");
+}
 
 function setForm(data){
     data = data || {};
@@ -64,22 +51,14 @@ function setForm(data){
 
 
 /////////////////Button Functions///////////////
-
-
-function deleteAdminForm(){
-    let eventId = $('#modal-event-id').val();
-    let eventIdDiv = $(`[eventId|="${eventId}"]`).parent();
-    eventIdDiv.css({"display": "none"});
-    modalRevise.css("display","none");
-    
-    fetch('/api/events/delete/' + eventId, {
-        method: 'DELETE',
-        body: JSON.stringify({id: eventId}),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(response => response.json())
+/****Create****/
+function createNewEventBtn(){
+    let newEventHtml = $(`<button class="newEvent">Add New Event</button>`);
+    newEventHtml.click(function(){
+        revealModal();
+        setForm();
+    });
+    return newEventHtml;
 };
 
 /****POST****/
@@ -117,8 +96,26 @@ function submitAdminForm() {
         }) 
   }
 
+  /****Cancel****/
   function cancelAdminForm() {
-    modalRevise.css("display","none");
+    hideModal();
     $('#modal-header').text('');
     $('#modal-input').text('');
   }
+
+  /****Delete****/
+  function deleteAdminForm(){
+    let eventId = $('#modal-event-id').val();
+    let eventIdDiv = $(`[eventId|="${eventId}"]`).parent();
+    eventIdDiv.css({"display": "none"});
+    modalRevise.css("display","none");
+    
+    fetch('/api/events/' + eventId, {
+        method: 'DELETE',
+        body: JSON.stringify({id: eventId}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => response.json())
+};
