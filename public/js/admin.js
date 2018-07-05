@@ -24,11 +24,16 @@ $(document).on('click','.revise', function(event){
     let eventId = $(this).children('h2').attr('eventId');
     const myEvent =  window.eventList.find(myEvent => myEvent._id === eventId);
     setForm(myEvent);
-    revealModal();
+    revealModal(eventId);
 })
 
-function revealModal(){
+function revealModal(eventId){
     modalRevise.css("display", "flex");
+    if(eventId){
+        $(".event-delete-btn").show();
+      } else {
+        $(".event-delete-btn").hide(); 
+      }
 }
 
 function hideModal(){
@@ -42,6 +47,7 @@ function setForm(data){
         eventId: data._id,
         header: data.header,
         paragraph: data.paragraph,
+        status: data.status
     };
 
     $('#modal-event-id').val(formData.eventId);
@@ -53,7 +59,7 @@ function setForm(data){
 /////////////////Button Functions///////////////
 /****Create****/
 function createNewEventBtn(){
-    let newEventHtml = $(`<button class="newEvent">Add New Event</button>`);
+    let newEventHtml = $(`<div class="newEventContainer"><span class="newEvent">Add New Event</span></div>`);
     newEventHtml.click(function(){
         revealModal();
         setForm();
@@ -97,25 +103,25 @@ function submitAdminForm() {
   }
 
   /****Cancel****/
-  function cancelAdminForm() {
+function cancelAdminForm() {
     hideModal();
     $('#modal-header').text('');
     $('#modal-input').text('');
-  }
+ }
 
-  /****Delete****/
-  function deleteAdminForm(){
-    let eventId = $('#modal-event-id').val();
-    let eventIdDiv = $(`[eventId|="${eventId}"]`).parent();
-    eventIdDiv.css({"display": "none"});
-    modalRevise.css("display","none");
-    
-    fetch('/api/events/' + eventId, {
-        method: 'DELETE',
-        body: JSON.stringify({id: eventId}),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(response => response.json())
+/****Delete****/
+function deleteAdminForm(){
+let eventId = $('#modal-event-id').val();
+let eventIdDiv = $(`[eventId|="${eventId}"]`).parent();
+eventIdDiv.css({"display": "none"});
+modalRevise.css("display","none");
+
+fetch('/api/events/' + eventId, {
+    method: 'DELETE',
+    body: JSON.stringify({id: eventId}),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+    })
+    .then(response => response.json())
 };

@@ -229,7 +229,6 @@ Back to top selector
     border-width: 5px 0px;
     border-radius: 5px;
     background-color: rgba(236, 232, 212, 0.4);
-    
 }
 
 .event-header{
@@ -239,6 +238,35 @@ Back to top selector
 
 .event{
     padding: 0 0 30px;
+}
+
+.newEventContainer{
+    display: none;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.event-wrapper:hover .newEventContainer{
+    display: flex;
+    -webkit-animation-name: fadeIn; 
+    -webkit-animation-duration: 0.6s;
+
+}
+
+.newEvent{
+    background: lightcyan;
+    color: slategray;
+    border: solid lightslategray;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    width: 95%;
+    padding: 20px;
+}
+
+.newEvent:hover{
+    background: lightblue;
+    box-shadow: 0px 1px 5px #000;
 }
 
 /* ==========================================================================

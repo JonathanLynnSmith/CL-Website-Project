@@ -167,10 +167,10 @@
         <input type="hidden" autocomplete="off" id="modal-event-id"></input>
         <textarea autocomplete="off" id="modal-header"></textarea>
         <textarea autocomplete="off" id="modal-input" cols="30" rows="10"></textarea>
-        <span style="display:flex; justify-content: flex-end;">
+        <span id="event-buttons" style="display:flex; justify-content: flex-end;">
             <button type="button" onclick="submitAdminForm()" class="modal-btn" id="admin-submit" style="background: #FFB900" type="submit">Save</button>
             <button type="button" onclick="cancelAdminForm()" class="modal-btn" id="admin-cancel" style="background:lightcoral">Cancel</button>
-            <button type="button" class="modal-btn" onClick="deleteAdminForm()" style="background:red">Delete</button>
+            <button type="button" class="modal-btn event-delete-btn" onClick="deleteAdminForm()" style="background:red">Delete</button>
         </span>
     </form>
 </div>
