@@ -4,7 +4,7 @@ const EventSchema = new mongoose.Schema({
     header: String,
     paragraph: String,
     created_at: { type: Date, default: Date.now },
-    status: { type: Boolean, default: true },
+    deleted: { type: Boolean, default: false },
   });
 
 const Event = mongoose.model("Event", EventSchema);

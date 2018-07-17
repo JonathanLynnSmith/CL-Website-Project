@@ -13,12 +13,23 @@ function checkUrlForAdmin(){
          reviseableAreas.forEach(function(x){
              $(x).addClass('revise');
          })
-         $('#event-wrapper').append(createNewEventBtn());
+         $('.newEventButtonContainer').html(createNewEventBtn());
      }
  };
  /***************************************/
+ 
+/****Create Button****/
+function createNewEventBtn(){
+    let newEventHtml = $(`<span class="newEvent">Add New Event</span>`);
+    newEventHtml.click(function(){
+        revealModal();
+        setForm();
+    });
+    return newEventHtml;
+};
 
-
+/****Create Button****/
+//Allow divs that contain a class called revise to open the admin modal
 $(document).on('click','.revise', function(event){
     event.preventDefault();
     let eventId = $(this).children('h2').attr('eventId');
@@ -51,21 +62,12 @@ function setForm(data){
     };
 
     $('#modal-event-id').val(formData.eventId);
-    $('#modal-header').text(formData.header);
-    $('#modal-input').text(formData.paragraph);
+    $('#modal-header').val(formData.header);
+    $('#modal-input').val(formData.paragraph);
 }
 
 
 /////////////////Button Functions///////////////
-/****Create****/
-function createNewEventBtn(){
-    let newEventHtml = $(`<div class="newEventContainer"><span class="newEvent">Add New Event</span></div>`);
-    newEventHtml.click(function(){
-        revealModal();
-        setForm();
-    });
-    return newEventHtml;
-};
 
 /****POST****/
 function submitAdminForm() {
@@ -96,13 +98,14 @@ function submitAdminForm() {
         .then(response => response.json())
         .then(file => {
           console.log("we have posted the data", file);
+          refreshFileList();
         })
         .catch(err => {
           console.error("A terrible thing has happened", err);
         }) 
-  }
+    }
 
-  /****Cancel****/
+/****Cancel****/
 function cancelAdminForm() {
     hideModal();
     $('#modal-header').text('');
@@ -111,17 +114,17 @@ function cancelAdminForm() {
 
 /****Delete****/
 function deleteAdminForm(){
-let eventId = $('#modal-event-id').val();
-let eventIdDiv = $(`[eventId|="${eventId}"]`).parent();
-eventIdDiv.css({"display": "none"});
-modalRevise.css("display","none");
+    console.log()
+    let eventId = $('#modal-event-id').val();
+    modalRevise.css("display","none");
 
-fetch('/api/events/' + eventId, {
-    method: 'DELETE',
-    body: JSON.stringify({id: eventId}),
-    headers: {
-        'Content-Type': 'application/json'
-    }
-    })
-    .then(response => response.json())
+    fetch(`/api/events/${eventId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+        })
+        .then(response => response.json())
+        .then(response => refreshFileList())
+
 };

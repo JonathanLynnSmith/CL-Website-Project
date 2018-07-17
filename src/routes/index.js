@@ -7,19 +7,27 @@ const path = require('path');
 router.delete('/events/:eventId', function(req,res,next){
   const Event = mongoose.model('Event');
   const eventId = req.params.eventId;
-  // Event.findById(eventId, function(err, event){
-  //   console.log(event);
-  // })
-  Event.findByIdAndRemove(eventId, function (err, event){
+  console.log(req.params.eventId)
+
+  Event.findById(eventId, function(err, event){
     if(err){
       console.log(err);
-      return res.status(500).json(err);
+      return res.status(509).json(err);
     }
     if(!event){
       return res.status(400).json({message: "file not found"});
     }
-  })
 
+    event.deleted = true;
+
+    event.save(function(err, savedFile) {
+      if (err) {
+        console.error(err);
+        return res.status(500).json(err);
+      }
+      res.json(savedFile);
+    }) 
+  });
 });
 
 router.put('/events/:eventId', function(req, res, next){
@@ -66,7 +74,7 @@ router.post('/events', function(req, res, next){
 });
 
 router.get('/events', function(req,res,next){
-    mongoose.model('Event').find({}, function(err, events) {
+    mongoose.model('Event').find({deleted: {$ne: true}}, function(err, events) {
         if (err) {
         console.log(err);
         return res.status(500).json(err);

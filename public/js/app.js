@@ -2,13 +2,16 @@
 Events
 ***********************************************************/
 
+$(document).ready(function(){
+    refreshFileList();
+});
 
-$(document).ready( function(){
+function refreshFileList(){
     getFiles()
     .then(files => renderFiles(files))
     .then(html => $('#events').html(html))
-    .then(check => checkUrlForAdmin())
-});
+    .then(file => checkUrlForAdmin())
+}
 
 //Get data
 function getFiles(){
@@ -21,8 +24,8 @@ function getFiles(){
 };
 
 function renderFiles(data){
-    const listItems = data.map(line => `        
-        <div class="event"> 
+    const listItems = data.map(line => 
+        `<div class="event"> 
             <h2 eventId="${line._id}">${line.header}</h2>
             <p>${line.paragraph}</p>
         </div>`);
@@ -30,6 +33,7 @@ function renderFiles(data){
     const html = listItems.join('');
     return html;
 };
+
 
 /********************************************************** 
 Weather Application at top of page *DISABLED*
