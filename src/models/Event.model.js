@@ -7,9 +7,12 @@ const EventSchema = new mongoose.Schema({
     deleted: { type: Boolean, default: false },
   });
 
+
 const Event = mongoose.model("Event", EventSchema);
 module.exports = Event;
 
+//Seeding Method
+//Seeds the database if database  have no data 
 Event.count({}, function(err, count) {
     if (err) {
       throw err;

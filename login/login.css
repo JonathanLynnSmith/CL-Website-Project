@@ -1,0 +1,107 @@
+/* ==========================================================================
+Login Page
+   ========================================================================== */
+
+   .flex-center{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+  }
+  
+  div.login-page{
+    background: #fff;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: Arial;
+    min-height: 400px;
+  }
+  
+  .login-container{
+    min-width: 20em;
+    min-height: 10em;
+    width: 20em;
+    border-radius: 10px;
+    padding-bottom: 5em;
+  }
+  
+  h1.login-header{
+    position: relative;
+    color: #606060;
+    border-radius:40px;
+  }
+  
+  .login-form{
+    height: 60%; 
+  
+  }
+  
+  .username-wrapper,
+  .email-wrapper,
+  .password-wrapper{
+    display: flex;
+    width: 100%;
+    max-width: 20em;
+    margin: 5px;
+    border: 2px solid transparent;
+  }
+  
+  .login-label{
+    background:rgba(0,0,0,0.2);
+    color:#606060;
+    width: 4em;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 1.5em;
+    align-items: center;
+  }
+  
+  input{
+    font-size:1em;
+    font-weight: bold;
+    color: #606060;
+    border: none;
+    border-radius:0px 5px 5px 0px;
+    background: rgba(0,0,0,0.1);
+    min-height:2em;
+    width: 100%;
+    padding: 10px;
+    transition: background 0.3s;
+  }
+  
+  input:hover,
+  input:focus{
+    background:rgba(0,0,0,0.15);
+    outline: none;
+  }
+  
+  ::placeholder{
+    color: darkgray;
+    font-size: 1em;
+    opacity: 1;
+  }
+  
+  #login-sign-in{
+    background:#c49925;
+    color: #eee;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 2.3em;
+    width:100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.5s;
+    margin-top: 3%;
+  }
+  
+  #login-sign-in:hover{
+    background: #ba901f;  
+  }
+  
+  #missing-input-message{
+    color:red; 
+    font-size: 0.9em;
+    transition:all 0.2s;
+  }
+  

@@ -15,7 +15,9 @@ function refreshFileList(){
 
 //Get data
 function getFiles(){
-    return fetch('/api/events')
+    return fetch('/api/events', {
+        credentials: 'include'
+    })
     .then( response => response.json())
     .then( files => {
         window.eventList = files;

@@ -27,8 +27,10 @@ function createNewEventBtn(){
     });
     return newEventHtml;
 };
+/********************/
 
-/****Create Button****/
+
+/****Open/Hide Admin Modal****/
 //Allow divs that contain a class called revise to open the admin modal
 $(document).on('click','.revise', function(event){
     event.preventDefault();
@@ -50,6 +52,9 @@ function revealModal(eventId){
 function hideModal(){
     modalRevise.css("display","none");
 }
+/********************/
+
+
 
 function setForm(data){
     data = data || {};
@@ -91,6 +96,7 @@ function submitAdminForm() {
     fetch(url, {
         method: method,
         body: JSON.stringify(formData),
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json'
         }
@@ -120,6 +126,7 @@ function deleteAdminForm(){
 
     fetch(`/api/events/${eventId}`, {
         method: 'DELETE',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
         }
