@@ -22,9 +22,17 @@ mongoose.connection.openUri(`mongodb://${config.db.username}:${config.db.passwor
 //middleware
 app.use(bodyParser.json());
 app.use(express.static(publicPath));
-app.use('/login', express.static(loginPath))
+
 app.use('/api', router);
+app.use('/admin', function (req, res, next) {
+  if (!req.session.userId) {
+    console.log('making note about header error here')
+    res.redirect('/login');
+  }
+  next();
+})
 app.use('/admin', express.static(publicPath))
+app.use('/login', express.static(loginPath))
 app.use('/', router);
 
 
@@ -44,7 +52,7 @@ app.use('/', router);
 /////////////////////////////////////
 
 
-app.listen(config.port, function() {
+app.listen(config.port, function () {
   console.log(`${config.appName} is listening on port ${config.port}`);
 });
 
