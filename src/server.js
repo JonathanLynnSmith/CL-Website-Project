@@ -26,10 +26,10 @@ app.use(express.static(publicPath));
 app.use('/api', router);
 app.use('/admin', function (req, res, next) {
   if (!req.session.userId) {
-    console.log('making note about header error here')
     res.redirect('/login');
+  } else{
+    next();
   }
-  next();
 })
 app.use('/admin', express.static(publicPath))
 app.use('/login', express.static(loginPath))
