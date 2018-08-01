@@ -18,6 +18,11 @@ a {
 p,h1,h2,h3,h4,h5,h6{
     color: #00171F;
 }
+
+section{
+    margin: auto;
+    max-width: 2000px;
+}
 /* ==========================================================================
    Body
    ========================================================================== */
@@ -160,12 +165,21 @@ Back to top selector
    ========================================================================== */
  .about{
      margin:30px;
-     padding: 40px 0 50px;
+     padding: 0 50px;
+ }
+
+ .about-wrapper{
+     display: flex;
  }
 
  .about img{
      height: auto;
-     width: 90%
+     width: 1em;
+ }
+
+ .about-content{
+     display: flex;
+     flex-direction: column;
  }
 
 
@@ -224,7 +238,7 @@ Back to top selector
     display: flex;
     flex-direction: column;
     padding: 2%;
-    margin: 5% 10%;
+    margin-bottom: 2rem;
     border: 5px solid #FFB900;
     border-width: 5px 0px;
     border-radius: 5px;
@@ -487,7 +501,7 @@ footer .checkmark{
     }
 
     .about{
-        margin-bottom: 150px;
+        margin-bottom: 130px;
     }
 
     .board-members{

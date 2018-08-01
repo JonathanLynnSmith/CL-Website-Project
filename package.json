@@ -4,7 +4,7 @@
   "description": "My Project was built for a Home Owners Association. This will be used to inform home buyers interested in this area. This will also be used for the current community so they can also stayed informed on upcoming events or new policies.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "mongoose": "^5.1.5"
+    "mongoose": "^5.1.5",
+    "nodemon": "^1.18.3"
   }
 }
