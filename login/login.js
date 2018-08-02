@@ -41,7 +41,7 @@ function submitLogin() {
   //then redirects to admin page
   function redirectToAdmin(status) {
     if (status == 202) {
-      window.location = 'http://localhost:3030/admin/';
+      window.location = document.origin + '/admin/';
     } else {
       alert('wrong username or password')
     }
