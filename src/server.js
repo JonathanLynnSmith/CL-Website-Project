@@ -1,14 +1,20 @@
 const express = require('express');
+const session = require('express-session');
 const config = require('./config');
 const path = require('path');
 const app = express();
 const router = require('./routes');
 const publicPath = path.resolve(__dirname, '../public');
+const loginPath = path.resolve(__dirname, '../login');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-//require all models
-require('./models/event.model.js')
+// sessions for tracking logins
+app.use(session({
+  secret: 'HOA',
+  resave: true,
+  saveUninitialized: false
+}));
 
 //db connection string
 mongoose.connection.openUri(`mongodb://${config.db.username}:${config.db.password}@${config.db.host}/${config.db.dbName}`);
@@ -16,8 +22,18 @@ mongoose.connection.openUri(`mongodb://${config.db.username}:${config.db.passwor
 //middleware
 app.use(bodyParser.json());
 app.use(express.static(publicPath));
+
 app.use('/api', router);
+app.use('/admin', function (req, res, next) {
+  if (!req.session.userId) {
+    res.redirect('/login');
+  } else{
+    next();
+  }
+})
 app.use('/admin', express.static(publicPath))
+app.use('/login', express.static(loginPath))
+app.use('/', router);
 
 
 //404 handler///////////////////////
@@ -36,7 +52,7 @@ app.use('/admin', express.static(publicPath))
 /////////////////////////////////////
 
 
-app.listen(config.port, function() {
+app.listen(config.port, function () {
   console.log(`${config.appName} is listening on port ${config.port}`);
 });
 
