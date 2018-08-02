@@ -40,13 +40,13 @@ function renderFiles(data){
 /********************************************************** 
 Weather Application at top of page *DISABLED*
 ***********************************************************/
-// var weatherAPI = "https://api.wunderground.com/api/2e843102da35bfb9/conditions/q/40047.json";
-// var weatherMethod = function(data) {
-//     console.log(data);
-//     var currentTemp = '<h1> ' + data.current_observation.temp_f + 'F </h1>';
-//     $('.temp-gadge').append(currentTemp);
-// };
-// $.getJSON(weatherAPI, weatherMethod);
+var weatherAPI = "https://api.wunderground.com/api/2e843102da35bfb9/conditions/q/40047.json";
+var weatherMethod = function(data) {
+    console.log(data);
+    var currentTemp = '<h1> ' + data.current_observation.temp_f + 'F </h1>';
+    $('.temp-gadge').append(currentTemp);
+};
+$.getJSON(weatherAPI, weatherMethod);
 
 
 

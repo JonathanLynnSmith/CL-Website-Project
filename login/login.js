@@ -41,7 +41,7 @@ function submitLogin() {
   //then redirects to admin page
   function redirectToAdmin(status) {
     if (status == 202) {
-      window.location = document.origin + '/admin/';
+      window.location = window.location.origin + '/admin/';
     } else {
       alert('wrong username or password')
     }
